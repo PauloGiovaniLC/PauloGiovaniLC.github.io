@@ -1,0 +1,334 @@
+:root {
+  --accent: #2E75B6;
+  --muted: #6b7280;
+  --bg: #ffffff;
+  --card: #f8fafc;
+  --text: #0f172a;
+  --maxw: 900px;
+  --radius: 10px;
+  --font-size-base: 16px;
+  --font-size-small: 14px;
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+  font-family: "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  font-size: var(--font-size-base);
+  -webkit-font-smoothing: antialiased;
+}
+
+.wrap {
+  max-width: var(--maxw);
+  margin: 28px auto;
+  padding: 22px;
+  background: linear-gradient(180deg, #fff, #fcfeff);
+  box-shadow: 0 8px 30px rgba(16, 24, 40, 0.06);
+  border-radius: var(--radius);
+  border: 1px solid #e6eef8;
+}
+
+header {
+  text-align: center;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #eef4fb;
+}
+
+h1 {
+  margin: 6px 0;
+  font-size: 24px;
+  letter-spacing: 0.6px;
+}
+
+.subtitle {
+  color: var(--muted);
+  font-size: 16px;
+  margin-bottom: 8px;
+}
+
+.contact {
+  font-size: 14px;
+  color: var(--muted);
+  margin-bottom: 14px;
+}
+
+.contact a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 320px;
+  gap: 22px;
+  margin-top: 18px;
+}
+
+@media (max-width: 820px) {
+  .grid {
+    grid-template-columns: 1fr;
+    padding: 0 6px;
+  }
+}
+
+.main {
+  padding: 10px;
+}
+
+.side {
+  background: var(--card);
+  padding: 14px;
+  border-radius: 8px;
+  border: 1px solid #eef6ff;
+  height: fit-content;
+}
+
+h2 {
+  font-size: 18px;
+  color: var(--accent);
+  margin: 6px 0 10px;
+}
+
+p {
+  margin: 8px 0;
+  color: #213041;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+ul {
+  margin: 8px 0 12px 18px;
+  padding: 0;
+  color: #213041;
+  font-size: 15px;
+}
+
+li {
+  margin: 6px 0;
+}
+
+.section {
+  margin-bottom: 14px;
+}
+
+.skill-list {
+  list-style: none;
+  padding-left: 0;
+}
+
+.skill-list li::before {
+  content: "✔️ ";
+  margin-right: 6px;
+  color: var(--accent);
+}
+
+.skill {
+  background: #fff;
+  padding: 6px 10px;
+  border-radius: 6px;
+  border: 1px solid #e6eef8;
+  font-size: 15px;
+  color: #243342;
+  text-align: justify;
+}
+
+.job {
+  margin-bottom: 8px;
+}
+
+.job .title {
+  font-weight: 600;
+  font-size: 16px;
+}
+
+.job .meta {
+  font-size: 14px;
+  color: var(--muted);
+}
+
+.divider {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, #e6eef8, transparent);
+  margin: 14px 0;
+  border-radius: 2px;
+}
+
+footer {
+  font-size: 14px;
+  color: var(--muted);
+  text-align: center;
+  margin-top: 14px;
+}
+
+/* Impressão */
+@media print {
+  * {
+    font-family: Arial, sans-serif !important;
+    font-size: 12px !important;
+    font-weight: 400 !important;
+    color: #000 !important;
+    background: transparent !important;
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
+  html, body {
+    margin: 0 !important;
+    padding: 0 !important;
+    background: #fff !important;
+  }
+  .wrap {
+    max-width: 100% !important;
+    padding: 10px !important;
+    border: none !important;
+    box-shadow: none !important;
+  }
+  h1, h2 {
+    font-size: 14px !important;
+    font-weight: 600 !important;
+  }
+  section[aria-label="Projetos e práticas"],
+  section[aria-label="Cursos"],
+  .modal,
+  footer {
+    display: none !important;
+  }
+}
+
+/* Links de projetos */
+.projects-list a {
+  color: var(--accent);
+  text-decoration: none;
+}
+.projects-list a:hover {
+  text-decoration: underline;
+}
+
+/* Modal de certificado */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  padding-top: 60px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+.modal-content {
+  background-color: #fefefe;
+  margin: auto;
+  padding: 30px 40px;
+  border: 1px solid #888;
+  width: 95%;
+  max-width: 900px;
+  border-radius: 10px;
+  position: relative;
+  text-align: center;
+}
+.modal-content img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 6px;
+  margin-bottom: 15px;
+}
+.modal-content h3 {
+  margin-top: 0;
+  color: var(--accent);
+  font-size: 20px;
+}
+.modal-content p {
+  font-size: 16px;
+  color: #333;
+}
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 18px;
+  color: var(--accent);
+  font-size: 30px;
+  font-weight: bold;
+  cursor: pointer;
+}
+.close-btn:hover {
+  color: #000;
+}
+
+/* Navegação modal */
+.nav-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: var(--accent);
+  border: none;
+  color: white;
+  font-size: 26px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  cursor: pointer;
+  opacity: 0.8;
+  user-select: none;
+}
+.nav-btn:hover {
+  opacity: 1;
+}
+.nav-prev {
+  left: 10px;
+}
+.nav-next {
+  right: 10px;
+}
+
+/* Lista de certificados */
+.cert-list {
+  list-style: none;
+  padding-left: 0;
+}
+.cert-list li {
+  margin: 6px 0;
+}
+.cert-list button {
+  background: none;
+  border: none;
+  color: var(--accent);
+  cursor: pointer;
+  font-size: 15px;
+  text-decoration: underline;
+  padding: 0;
+}
+.cert-list button:hover {
+  color: #1a4a8b;
+}
+
+/* Estilo do link “Veja meus certificados” */
+#openCertModal {
+  display: inline-block;
+  margin-top: 0.5em;
+  color: #0056b3;
+  font-weight: bold;
+  text-decoration: none;
+  cursor: pointer;
+  transition: color 0.3s, text-decoration 0.3s;
+}
+#openCertModal:hover {
+  color: #003f8a;
+  text-decoration: underline;
+}
+
+/* recuo de subtópico */
+.curso-subitem {
+  margin-left: 1.5em;
+  margin-top: 0.2em;
+  margin-bottom: 0.5em;
+  font-size: 0.95em;
+}
+
+.skill-list .clickable-item::before {
+  content: "👉 ";
+  margin-right: 6px;
+  color: var(--accent);
+}
