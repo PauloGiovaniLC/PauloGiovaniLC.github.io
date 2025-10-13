@@ -67,7 +67,8 @@
   });
 })();
 
-document.getElementById("openCertModal")?.addEventListener("click", function(e) {
+// Abertura do modal ao clicar no link "Veja meus certificados"
+document.getElementById("openCertModal")?.addEventListener("click", function (e) {
   e.preventDefault();
   const firstBtn = document.querySelector(".cert-list button");
   if (firstBtn) {

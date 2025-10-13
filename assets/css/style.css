@@ -162,40 +162,6 @@ footer {
   margin-top: 14px;
 }
 
-/* Impressão */
-@media print {
-  * {
-    font-family: Arial, sans-serif !important;
-    font-size: 12px !important;
-    font-weight: 400 !important;
-    color: #000 !important;
-    background: transparent !important;
-    box-shadow: none !important;
-    text-shadow: none !important;
-  }
-  html, body {
-    margin: 0 !important;
-    padding: 0 !important;
-    background: #fff !important;
-  }
-  .wrap {
-    max-width: 100% !important;
-    padding: 10px !important;
-    border: none !important;
-    box-shadow: none !important;
-  }
-  h1, h2 {
-    font-size: 14px !important;
-    font-weight: 600 !important;
-  }
-  section[aria-label="Projetos e práticas"],
-  section[aria-label="Cursos"],
-  .modal,
-  footer {
-    display: none !important;
-  }
-}
-
 /* Links de projetos */
 .projects-list a {
   color: var(--accent);
@@ -331,4 +297,75 @@ footer {
   content: "👉 ";
   margin-right: 6px;
   color: var(--accent);
+}
+
+/* Impressão */
+/* Impressão */
+@media print {
+  * {
+    font-family: Calibri, Georgia, serif !important;
+    font-size: 12.5px !important;
+    font-weight: 400 !important;
+    color: #000 !important;
+    background: transparent !important;
+    box-shadow: none !important;
+    text-shadow: none !important;
+    -webkit-font-smoothing: antialiased !important;
+    text-rendering: optimizeLegibility !important;
+    font-variant-ligatures: none !important;
+  }
+
+  html, body {
+    margin: 0 !important;
+    padding: 0 !important;
+    background: #fff !important;
+    width: 210mm; /* A4 width */
+    height: 297mm; /* A4 height */
+  }
+
+  .wrap {
+    width: 100% !important;
+    max-width: 100% !important;
+    padding: 20px !important;
+    border: none !important;
+    box-shadow: none !important;
+    page-break-after: avoid !important;
+  }
+
+  h1, h2 {
+    font-size: 14px !important;
+    font-weight: 600 !important;
+  }
+
+  .grid {
+    display: grid !important;
+    grid-template-columns: 1fr 300px !important;
+    gap: 20px !important;
+  }
+
+  /* Ocultar seções desnecessárias na impressão */
+  section[aria-label="Projetos e práticas"],
+  section[aria-label="Cursos"],
+  .modal,
+  footer {
+    display: none !important;
+  }
+
+  /* Prevenir quebra de página extra */
+  .section,
+  .main,
+  .side,
+  .wrap {
+    page-break-inside: avoid !important;
+    break-inside: avoid !important;
+  }
+
+  /* Evita margem/padding que cause quebra */
+  .section,
+  p,
+  ul,
+  li {
+    margin-bottom: 6px !important;
+  }
+  
 }
